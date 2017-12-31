@@ -1,0 +1,30 @@
+{
+  "name": "garage-pi",
+  "version": "1.0.0",
+  "description": "RESTful Raspberry Pi Garage Door Opener",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zdiubaldo/garage-pi.git"
+  },
+  "keywords": [
+    "RESTful",
+    "API",
+    "raspberrypi"
+  ],
+  "author": "zdiubaldo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zdiubaldo/garage-pi/issues"
+  },
+  "homepage": "https://github.com/zdiubaldo/garage-pi#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "nodemon": "^1.14.3"
+  }
+}
