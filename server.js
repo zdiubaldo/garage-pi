@@ -20,6 +20,7 @@ app.use(function(req, res, next) {
         res.status(403).json({
           message:"Wrong Token"
         });
+	next();
       }
       else{
         //If decoded then call next() so that respective route is called.
