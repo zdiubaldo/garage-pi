@@ -1,6 +1,6 @@
 'use strict';
 var Gpio = require('onoff').Gpio; 
-var LED = new Gpio(14, 'out'); 
+//var LED = new Gpio(14, 'out'); 
 
 
 exports.door_status = function(req, res) {
@@ -8,6 +8,7 @@ exports.door_status = function(req, res) {
 };
 
 exports.door_close = function(req, res) {
+/*
   if (LED.readSync() === 0) { 
     LED.writeSync(1);
         res.json({ message: 'opened the door' });
@@ -15,6 +16,8 @@ exports.door_close = function(req, res) {
     LED.writeSync(0); 
     res.json({ message: 'closed the door' });
   }
+*/
+  res.json({ message: 'closed the door' });
 };
 
 exports.door_open = function(req, res) {
