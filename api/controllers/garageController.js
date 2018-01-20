@@ -12,10 +12,14 @@ function isDoorOpen() {
     console.log('door is open')
     return false;
   }
+
 }
 
 exports.door_status = function(req, res) {
-  if isDoorOpen() {
+
+  var doorOpen = isDoorOpen();
+  
+  if (doorOpen === true) {
     res.json({ message: 'door is open' });
   } else {
     res.json({ message: 'door is closed' });
@@ -31,7 +35,6 @@ exports.door_close = function(req, res) {
     LED.writeSync(0); 
     res.json({ message: 'closed the door' });
   }
-  res.json({ message: 'closed the door' });
 };
 
 exports.door_open = function(req, res) {
