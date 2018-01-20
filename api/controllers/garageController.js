@@ -1,14 +1,29 @@
 'use strict';
-var Gpio = require('onoff').Gpio; 
-//var LED = new Gpio(14, 'out'); 
+var Gpio = require('onoff').Gpio;
+var LED = new Gpio(14, 'out');
+var doorSensor  = new Gpio(18, 'in');
 
+
+function isDoorOpen() {
+  if (doorSensor.readSync() === 1) { 
+    console.log('door is closed')
+    return true;
+  } else {
+    console.log('door is open')
+    return false;
+  }
+}
 
 exports.door_status = function(req, res) {
-  res.json({ message: 'door is open' });
+  if isDoorOpen() {
+    res.json({ message: 'door is open' });
+  } else {
+    res.json({ message: 'door is closed' });
+  }
+
 };
 
 exports.door_close = function(req, res) {
-/*
   if (LED.readSync() === 0) { 
     LED.writeSync(1);
         res.json({ message: 'opened the door' });
@@ -16,7 +31,6 @@ exports.door_close = function(req, res) {
     LED.writeSync(0); 
     res.json({ message: 'closed the door' });
   }
-*/
   res.json({ message: 'closed the door' });
 };
 
