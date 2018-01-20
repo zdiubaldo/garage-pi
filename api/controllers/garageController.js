@@ -5,7 +5,7 @@ var doorSensor  = new Gpio(23, 'out');
 
 
 function isDoorOpen() {
-  if (doorSensor.readSync() === 1) { 
+  if (doorSensor.readSync() === 0) { 
     console.log('door is closed')
     return true;
   } else {
