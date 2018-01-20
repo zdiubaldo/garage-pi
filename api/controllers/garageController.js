@@ -1,7 +1,7 @@
 'use strict';
 var Gpio = require('onoff').Gpio;
 var LED = new Gpio(14, 'out');
-var doorSensor  = new Gpio(18, 'out');
+var doorSensor  = new Gpio(23, 'out');
 
 
 function isDoorOpen() {
